@@ -1,7 +1,9 @@
 package com.vlasoff.springcourse;
 
+import java.util.List;
+
 public class MusicPlayer {
-    private Music music;
+    private final List<Music> musicList;
 
     private String name;
 
@@ -9,14 +11,8 @@ public class MusicPlayer {
 
     //IoC
 
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
-    public MusicPlayer() {
-    }
-
-    public void setMusic(Music music) {
-        this.music = music;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public String getName() {
@@ -35,7 +31,9 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        System.out.println("Playing " + music.getSong());
+    public void playMusicList() {
+        for (Music music : musicList) {
+            System.out.println(music.getSong());
+        }
     }
 }

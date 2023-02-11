@@ -8,12 +8,26 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:music_player.properties"/>
-    <bean id="musicBean"
+    <bean id="classicalMusic"
           class="com.vlasoff.springcourse.ClassicalMusic">
     </bean>
+    <bean id="jazzMusic"
+          class="com.vlasoff.springcourse.JazzMusic">
+    </bean>
+    <bean id="rockMusic"
+          class="com.vlasoff.springcourse.RockMusic">
+    </bean>
+
+
     <bean id="musicPlayer"
           class="com.vlasoff.springcourse.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+        <constructor-arg>
+            <list>
+                <ref bean="classicalMusic"/>
+                <ref bean="jazzMusic"/>
+                <ref bean="rockMusic"/>
+            </list>
+        </constructor-arg>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
