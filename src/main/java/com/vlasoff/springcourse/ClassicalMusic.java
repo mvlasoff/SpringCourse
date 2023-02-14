@@ -1,5 +1,7 @@
 package com.vlasoff.springcourse;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,5 +20,15 @@ public class ClassicalMusic implements Music {
     @Override
     public List<String> getSongs() {
         return songs;
+    }
+
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Classical music init.");
+    }
+
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Classical music destroy.");
     }
 }
