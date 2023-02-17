@@ -6,8 +6,8 @@ public class JazzMusic implements Music {
     private List<String> songs;
 
     public JazzMusic() {
-        songs = List.of("Jazz: Dave Brubeck - Take Five",
-                "Jazz: Miles Davis - So What",
+        songs = List.of("Dave Brubeck - Take Five",
+                "Miles Davis - So What",
                 "Duke Ellington - Take The A Train");
     }
 

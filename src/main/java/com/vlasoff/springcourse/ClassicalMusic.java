@@ -2,19 +2,17 @@ package com.vlasoff.springcourse;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class ClassicalMusic implements Music {
 
     private List<String> songs;
 
     public ClassicalMusic() {
-        songs = List.of("Classical: Mozart – Eine kleine Nachtmusik",
-                "Classical: Beethoven – Für Elise",
-                "Classical: Puccini – 'O mio babbino caro' from Gianni Schicchi");
+        songs = List.of("Mozart – Eine kleine Nachtmusik",
+                "Beethoven – Für Elise",
+                "Puccini – 'O mio babbino caro' from Gianni Schicchi");
     }
 
     @Override
